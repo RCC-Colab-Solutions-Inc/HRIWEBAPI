@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainAPIController;
+use App\Http\Controllers\EmployeeControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::prefix('hr')->middleware(['check.apisecret'])->group(function () {
         return response()->json(['message' => 'Hello World!'], 200);
     });
 
-    Route::get('/dashboard', [MainAPIController::class, 'dashboard']);
-
+    Route::post('/add-employee-record', [EmployeeControllers::class, 'AddEmployeeRecord']);
+    Route::post('/UpdateEmployeeRecord', [EmployeeControllers::class, 'UpdateEmployeeRecord']);
+    Route::post('/DeleteEmployeeRecord', [EmployeeControllers::class, 'DeleteEmployeeRecord']);
+    Route::get('/DisplayEmployeeRecord', [EmployeeControllers::class, 'GetEmployeeRecord']);
 });

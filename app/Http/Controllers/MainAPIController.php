@@ -13,8 +13,18 @@ use App\Models\LeaveType;
 use App\Models\LogInCredentials;
 use App\Models\TimeSheet;
 
+
+//use validation
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
 //use the log
 use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Stmt\Catch_;
 
 class MainAPIController extends Controller
 {
@@ -28,4 +38,7 @@ class MainAPIController extends Controller
 
         return response()->json($data);
     }
+
+  
+   
 }
